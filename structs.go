@@ -1,17 +1,16 @@
 package openweathermap
 
 type Weather struct {
-	APIKey    string
-	BaseUnits string
+	APIKey string
 }
 
 type WeatherResponse struct {
-	GeoPos Coord  `json:"coord"`
-	Main   Main   `json:"main"`
-	Name   string `json:"name"`
+	GeoPos WeatherResponseCoord `json:"coord"`
+	Main   WeatherResponseMain  `json:"main"`
+	Name   string               `json:"name"`
 }
 
-type Main struct {
+type WeatherResponseMain struct {
 	Temp      float64 `json:"temp"`
 	TempMin   float64 `json:"temp_min"`
 	TempMax   float64 `json:"temp_max"`
@@ -22,7 +21,7 @@ type Main struct {
 	Humidity  int     `json:"humidity"`
 }
 
-type Coord struct {
+type WeatherResponseCoord struct {
 	Lon float64 `json:"lon"`
 	Lat float64 `json:"lat"`
 }
